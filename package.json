@@ -25,7 +25,8 @@
     "index.js",
     "index.d.ts",
     "cli.js",
-    "reporter.js"
+    "reporter.js",
+    "sort-algo.js"
   ],
   "scripts": {
     "fix": "eslint . --fix && prettier . \"!**/*.js\" --write && node cli.js \"package.json\"",

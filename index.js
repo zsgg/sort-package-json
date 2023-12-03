@@ -245,7 +245,9 @@ const fields = [
       'host',
     ]),
   },
-  { key: 'scripts', over: sortScripts },
+  // 이거 안씀
+  // { key: 'scripts', over: sortScripts },
+  { key: 'scripts' },
   { key: 'betterScripts', over: sortScripts },
   /* vscode */ { key: 'contributes', over: sortObject },
   /* vscode */ { key: 'activationEvents', over: uniq },

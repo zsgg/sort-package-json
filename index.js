@@ -3,6 +3,7 @@ import detectIndent from 'detect-indent'
 import { detectNewlineGraceful as detectNewline } from 'detect-newline'
 import gitHooks from 'git-hooks-list'
 import isPlainObject from 'is-plain-obj'
+import sortAlgo from './sort-algo.js'
 
 const hasOwn =
   Object.hasOwn ||
@@ -164,7 +165,7 @@ const sortScripts = onObject((scripts, packageJson) => {
   })
 
   if (!hasDevDependency('npm-run-all', packageJson)) {
-    keys.sort()
+    keys.sort(sortAlgo)
   }
 
   const order = keys.flatMap((key) =>
@@ -245,9 +246,7 @@ const fields = [
       'host',
     ]),
   },
-  // 이거 안씀
-  // { key: 'scripts', over: sortScripts },
-  { key: 'scripts' },
+  { key: 'scripts', over: sortScripts },
   { key: 'betterScripts', over: sortScripts },
   /* vscode */ { key: 'contributes', over: sortObject },
   /* vscode */ { key: 'activationEvents', over: uniq },

@@ -31,7 +31,6 @@
   "scripts": {
     "fix": "eslint . --fix && prettier . \"!**/*.js\" --write && node cli.js \"package.json\"",
     "lint": "eslint . && prettier . \"!**/*.js\" --check && node cli.js \"package.json\" --check",
-    "prepare": "husky install",
     "semantic-release": "semantic-release",
     "test": "ava && dtslint --localTs node_modules/typescript/lib",
     "test-coverage": "nyc ava",
